@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    border-radius: 1em;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "Geologica";
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #aa0473;
+    color: white;
+}
+
+@media screen and (max-width: 700px) {
+    .main-title {
+        font-size: 72px;
+    }
+    .subtitle {
+        font-size: 20px;
+    }
+    .topnav a {
+        font-size: 14px;
+    }
+    .footer-text {
+        font-size: 14px;
+    }
+    .btn-main {
+        font-size: 26px;
+        --border: 3px;
+    }
+    .about-text {
+        margin: 10px 5%;
+        font-size: 16px;
+    }
+    .secret-img {
+        border: 3px solid #aa0473;
+        margin-top: 30%;
+        width: 35%;
+    }
+    .subtitle-no-secret {
+        font-size: 24px;
+        margin-top: 30%;
+    }
+
+}   
+
+@media screen and (min-width: 701px) {
+    .main-title {
+        font-size: 140px;
+    }
+    .subtitle {
+        font-size: 36px;
+    }
+    .topnav a {
+        font-size: 18px;
+    }
+    .footer-text {
+        font-size: 18px;
+    }
+    .btn-main {
+        font-size: 35px;
+        --border: 5px;
+    }
+    .about-text {
+        margin: 10px 20%;
+        font-size: 28px;
+    }
+    .secret-img {
+        border: 7px solid #aa0473;
+        margin-top: 10%;
+        width: 25%;
+    }
+    .subtitle-no-secret {
+        font-size: 42px;
+        margin-top: 25%;
+    }
+}
+
+.secret-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%;
+}
+
+
+.main-title {
+    font-family: "Geologica";
+    text-align: center;
+    color: #aa0473;
+    margin-bottom: 0px;
+}
+
+.subtitle {
+    font-family: "Geologica";
+    text-align: center;
+    color: #850058;
+    margin-top: 10px;
+    padding: 0px 10%;
+}
+
+.subtitle-no-secret {
+    font-family: "Geologica";
+    text-align: center;
+    color: #850058;
+    padding: 0px 10%;   
+}
+
+.about-text {
+    font-family: "Geologica";
+    text-align: center;
+    color: #850058;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.3rem;
+    color: #850058;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    font-family: "Geologica";
+}
+
+
+.btn-group {
+    text-align: center;
+}
+
+.btn-main {
+    --slant: 0.7em;   /* control the slanted corners */
+    --color: #37E8FC; /* the color */
+
+    padding: 0.4em 1.2em;
+    margin: 0.3em 0.3em;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--color);
+    background: 
+        linear-gradient(to bottom left,var(--color)  50%,#0000 50.1%) top right,
+        linear-gradient(to top   right,var(--color)  50%,#0000 50.1%) bottom left;
+    background-size: calc(var(--slant) + 1.3*var(--border)) calc(var(--slant) + 1.3*var(--border));
+    background-repeat: no-repeat;
+    box-shadow:
+        0 0 0 200px inset var(--s,#0000),
+        0 0 0 var(--border) inset var(--color);
+    clip-path: 
+        polygon(0 0, calc(100% - var(--slant)) 0, 100% var(--slant),
+                100% 100%, var(--slant) 100%,0 calc(100% - var(--slant))
+                );
+    transition: color var(--t,0.3s), background-size 0.3s;
+}
+.btn-main:focus-visible {
+    outline-offset: calc(-1*var(--border));
+    outline: var(--border) solid #000c;
+    clip-path: none;
+    background-size: 0 0;
+}
+.btn-main:hover,
+.btn-main:active{
+    background-size: 100% 100%;
+    color: #fff;
+    --t: 0.2s 0.1s;
+}
+.btn-main:active {
+    --s: #0005;
+    transition: none;
+}

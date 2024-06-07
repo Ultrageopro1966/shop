@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zalupa</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    
+    {% include 'topnav.html' %}
+
+    <h1 class="main-title">Zalupa</h1>
+    <p class="subtitle">магазин дилдо и прочей утвари при помощи спонсоров</p>
+
+    <div class="btn-group">
+        <button class="btn-main" onclick="location.href='/secret?code=0'" style="--color:#aa0473;">пасхалко</button>
+        <button class="btn-main" onclick="location.href='/sponsors'" style="--color:#aa0473;">спонсоры</button>
+        <button class="btn-main" onclick="location.href='/about'" style="--color:#aa0473;">о портале</button>
+    </div>
+
+    {% include 'footer.html' %}
+
+</body>
+</html>
