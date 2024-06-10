@@ -115,11 +115,13 @@
 .secret-img {
     display: block;
     margin-left: auto;
+    user-select: none;
     margin-right: auto;
     border-radius: 10%;
 }
 
 .main-img {
+    user-select: none;
     display: block;
     margin-left: auto;
     margin-right: auto;
