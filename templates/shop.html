@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Clicker Game</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/icon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body class="body-shop">
+    {% include 'topnav.html' %}
+
+    <h1 class="main-title">Shop</h1>
+
+    <div class="divider"></div>
+    <p class="about-text">Кликай, пуп... ммм.. сик!</p>
+
+    <div class="game-container">
+        <img src="static/images/coin.png" alt="Click on the coin!" id="coin" class="coin">
+        <div id="score">Score: 0</div>
+    </div>
+    <div class="divider"></div>
+    <script src="{{ url_for('static', filename='script/clicker.js') }}" type="module"></script>
+
+
+</body>
+</html>

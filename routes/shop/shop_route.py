@@ -1,12 +1,20 @@
-from flask import render_template, Blueprint
+"""shop route."""
+
+from __future__ import annotations
+
+from flask import Blueprint, render_template
+
 
 class ShopRoute:
-    def __init__(self) -> None:
-        self.blueprint = Blueprint('shop', __name__)
+    """Shop route class."""
 
-        @self.blueprint.route('/shop')
-        def shop():
+    def __init__(self: ShopRoute) -> None:
+        """Init shop route."""
+        self.blueprint = Blueprint("shop", __name__)
+
+        @self.blueprint.route("/shop")
+        def shop() -> tuple[str, int]:
             return self.__shop()
-        
-    def __shop(self):
-        return render_template('501.html'), 501
+
+    def __shop(self: ShopRoute) -> tuple[str, int]:
+        return render_template("shop.html"), 200

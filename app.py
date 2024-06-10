@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
+from uuid import uuid4
+
 from flask import Flask, render_template
 
 from routes.about_route import AboutRoute
-from routes.auth.log_in_route import SignUpRoute
+from routes.auth.log_in_route import LogInRoute
 from routes.auth.sign_in_route import SignInRoute
 from routes.main_route import MainRoute
 from routes.secret_route import SecretRoute
@@ -17,7 +19,7 @@ app = Flask(__name__)
 about_route = AboutRoute()
 main_route = MainRoute()
 sign_in_route = SignInRoute()
-sign_up_route = SignUpRoute()
+log_in_route = LogInRoute()
 secret_route = SecretRoute()
 sponsors_route = SponsorsRoute()
 shop_route = ShopRoute()
@@ -25,7 +27,7 @@ shop_route = ShopRoute()
 app.register_blueprint(about_route.blueprint)
 app.register_blueprint(main_route.blueprint)
 app.register_blueprint(sign_in_route.blueprint)
-app.register_blueprint(sign_up_route.blueprint)
+app.register_blueprint(log_in_route.blueprint)
 app.register_blueprint(secret_route.blueprint)
 app.register_blueprint(sponsors_route.blueprint)
 app.register_blueprint(shop_route.blueprint)
@@ -42,4 +44,5 @@ def page_not_found(_: Exception) -> tuple[str, int]:
 
 
 if __name__ == "__main__":
-    app.run("0.0.0.0")  # noqa: S104
+    app.secret_key = str(uuid4())
+    app.run("0.0.0.0", debug=True)  # noqa: S104
