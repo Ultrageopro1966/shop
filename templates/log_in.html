@@ -12,7 +12,7 @@
     {% include 'topnav.html' %}
 
     <h2 class="title-sign-in">Log In</h2>
-    <form class="form-sign-in" action="{{ url_for('sign-in.signin') }}" method="post">
+    <form class="form-sign-in" action="{{ url_for('log-in.signin') }}" method="post">
         <div>
             <label for="email">Login:</label>
             <input type="text" id="email" name="email" class="input-field-sign-in" required>
@@ -27,6 +27,11 @@
         {% if error %}
             <div class="error-sign-in">
                 <p>{{ error }}</p>
+            </div>
+        {% endif %}
+        {% if success %}
+            <div class="success-sign-in" style="color: green;">
+                <p>{{ success }}</p>
             </div>
         {% endif %}
     </form>

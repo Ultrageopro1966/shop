@@ -44,7 +44,7 @@ class SignInRoute:
                         "sign_in.html",
                         error=f"{msg} Пошел нахуй.",
                     ),
-                    501,
+                    403,
                 )
 
             # Redirect to a different page if login is successful

@@ -49,7 +49,7 @@ def add_header(r: Response) -> Response:
 about_route = AboutRoute()
 main_route = MainRoute()
 sign_in_route = SignInRoute(database)
-log_in_route = LogInRoute()
+log_in_route = LogInRoute(database)
 secret_route = SecretRoute()
 sponsors_route = SponsorsRoute()
 shop_route = ShopRoute()

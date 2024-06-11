@@ -32,6 +32,11 @@ class SupabaseClient:
         else:
             return True
 
+    def get_user(self: SupabaseClient, login: str) -> dict[str, str] | None:
+        """Get user."""
+        response = self.__client.table("users").select("*").eq("login", login).execute()
+        return response.data[0] if response.data else None
+
     def get_coins(self: SupabaseClient, login: str) -> int | None:
         """Get coins."""
         response = (
