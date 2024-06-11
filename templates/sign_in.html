@@ -14,8 +14,8 @@
     <h2 class="title-sign-in">Sign In</h2>
     <form class="form-sign-in" action="{{ url_for('sign-in.signin') }}" method="post">
         <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" class="input-field-sign-in" required>
+            <label for="email">Login:</label>
+            <input type="text" id="email" name="email" class="input-field-sign-in" required>
         </div>
         <div>
             <label for="password">Password:</label>
@@ -25,8 +25,13 @@
             <button type="submit" class="submit-button-sign-in">Sign In</button>
         </div>
         {% if error %}
-            <div class="error-sign-in">
+            <div class="error-sign-in" style="color: red;">
                 <p>{{ error }}</p>
+            </div>
+        {% endif %}
+        {% if success %}
+            <div class="success-sign-in" style="color: green;">
+                <p>{{ success }}</p>
             </div>
         {% endif %}
     </form>

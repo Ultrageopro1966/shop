@@ -251,11 +251,16 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    user-select: none;
+    touch-action: manipulation;
 }
 
 .coin {
     cursor: pointer;
     transition: transform 0.1s ease;
+
+    user-select: none;
+    touch-action: manipulation;
 }
 
 .coin:active {
@@ -306,3 +311,6 @@ footer {
 }
 
 /* Use these classes in your HTML to ensure styling is specific */
+
+
+  

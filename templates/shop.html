@@ -11,6 +11,7 @@
     {% include 'topnav.html' %}
 
     <h1 class="main-title">Shop</h1>
+    <p class="subtitle">{{ is_login }}</p>
 
     <div class="divider"></div>
     <p class="about-text">Кликай, пуп... ммм.. сик!</p>
@@ -21,7 +22,5 @@
     </div>
     <div class="divider"></div>
     <script src="{{ url_for('static', filename='script/clicker.js') }}" type="module"></script>
-
-
 </body>
 </html>

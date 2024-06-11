@@ -17,4 +17,10 @@ class ShopRoute:
             return self.__shop()
 
     def __shop(self: ShopRoute) -> tuple[str, int]:
-        return render_template("shop.html"), 200
+        return (
+            render_template(
+                "shop.html",
+                is_login="Тут будет инфа о том зареган ты или нет. Пока иди нахуй это не имплементировано.",
+            ),
+            200,
+        )
