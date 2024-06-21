@@ -75,4 +75,4 @@ def page_not_found(_: Exception) -> tuple[str, int]:
 
 if __name__ == "__main__":
     app.secret_key = str(uuid4())
-    app.run("0.0.0.0", debug=True)  # noqa: S104
+    app.run("0.0.0.0")  # noqa: S104

@@ -11,4 +11,4 @@ COPY . .
 RUN poetry install
 
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-CMD [ "poetry", "run", "gunicorn", "-w", "4", "-b", "0.0.0.0:80", "app:app" ]
+CMD [ "poetry", "run", "gunicorn", "-w", "4", "-b", "0.0.0.0:5333", "app:app" ]
